@@ -67,7 +67,28 @@ public class ResourceCentreTest {
 	@Test
 	public void testAddChromebook() {
 		//fail("Not yet implemented");
-		// write your code here 
+		// Item list is not null and it is empty
+				assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+				assertEquals("Test that the Chromebook arraylist is empty.", 0, chromebookList.size());
+				//Given an empty list, after adding 1 item, the size of the list is 1
+				ResourceCentre.addChromebook(chromebookList, cb1);		
+				assertEquals("Test that the chromebook arraylist size is 1.", 1, chromebookList.size());
+
+				
+				// Add an item
+				ResourceCentre.addChromebook(chromebookList, cb2);
+				assertEquals("Test that the Chromebook arraylist size is now 2.", 2, chromebookList.size());
+				//The item just added is as same as the last item in the list
+				assertSame("Test that Chromebook is added to the end of the list.", cb2, chromebookList.get(1));
+
+				// Add an item that already exists in the list
+				ResourceCentre.addChromebook(chromebookList, cb2);
+				assertEquals("Test that the Chromebook arraylist size is unchange.", 2, chromebookList.size());
+
+				// Add an item that has missing detail
+				Chromebook cb_missing = new Chromebook("CB0011", "My Google Chromebook 1st", "Mac OS");
+				ResourceCentre.addChromebook(chromebookList, cb_missing);
+				assertEquals("Test that the Chromebook arraylist size is unchange.", 2, chromebookList.size()); 
 	}
 
 	@Test
@@ -179,7 +200,7 @@ public class ResourceCentreTest {
 	public void testDoLoanChromebook() {
 		// Test Case 1 - Loan an available Item
 				assertNotNull("test if there is valid Chromebook arraylist to loan from", chromebookList);
-				ResourceCentre.addChromebook(chromebookList, cc1);
+				ResourceCentre.addChromebook(chromebookList, cb1);
 				Boolean ok = ResourceCentre.doLoanChromebook(chromebookList, "CC0011", "8-8-2020" );
 				assertTrue("Test if an available item is ok to loan?", ok);
 				assertFalse(chromebookList.get(0).getIsAvailable());
@@ -187,7 +208,7 @@ public class ResourceCentreTest {
 
 				// Test Case 2 - Loan an unavailable item
 				cc2.setIsAvailable(false);
-				ResourceCentre.addChromebook(chromebookList, cc2);
+				ResourceCentre.addChromebook(chromebookList, cb2);
 				assertFalse("Test that there is an item not available", chromebookList.get(1).getIsAvailable());
 				ok = ResourceCentre.doLoanChromebook(chromebookList, "CC0012", "8-8-2020" );
 				assertFalse("Test that the loan fails.", ok);	
@@ -197,7 +218,7 @@ public class ResourceCentreTest {
 				assertFalse("Test that the loan fails.", ok);
 
 				// Test case 4 - Missing details
-				ResourceCentre.addChromebook(chromebookList, cc3);
+				ResourceCentre.addChromebook(chromebookList, cb3);
 				assertTrue("Test that there is an item available", chromebookList.get(2).getIsAvailable());
 				ok = ResourceCentre.doLoanChromebook(chromebookList, "CC0013", "" );
 				assertFalse("Test that the loan fails.", ok);
