@@ -9,6 +9,8 @@ private int opticalZoom;
 
 	public int getOpticalZoom() {
 		return opticalZoom;
+		
+		//testing for last time
 	}
 	
 	public String toString(){
