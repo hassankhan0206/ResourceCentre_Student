@@ -12,12 +12,7 @@ private int opticalZoom;
 	}
 		//testing for last time
 		//wafiy wifey 3
-		
 
-	
-	
-	
-		
 		//push game strong
 		
 		// hassan
