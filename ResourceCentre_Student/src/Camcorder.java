@@ -9,9 +9,19 @@ private int opticalZoom;
 
 	public int getOpticalZoom() {
 		return opticalZoom;
-		
-		//testing for last time
 	}
+		//testing for last time
+		//wafiy wifey 3
+		
+
+	
+	
+	
+		
+		//push game strong
+		
+		// hassan
+
 	
 	public String toString(){
 		String output = "";
