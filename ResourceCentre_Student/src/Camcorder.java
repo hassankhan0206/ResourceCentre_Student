@@ -11,6 +11,7 @@ private int opticalZoom;
 		return opticalZoom;
 		
 		//testing for last time
+		//wafiy wifey
 	}
 	
 	public String toString(){
