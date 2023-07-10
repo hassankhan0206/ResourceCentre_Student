@@ -13,6 +13,8 @@ private int opticalZoom;
 		//testing for last time
 		
 		//push game strong
+		
+		// hassan
 	}
 	
 	public String toString(){
