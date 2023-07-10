@@ -11,6 +11,8 @@ private int opticalZoom;
 		return opticalZoom;
 		
 		//testing for last time
+		
+		//push game strong
 	}
 	
 	public String toString(){
