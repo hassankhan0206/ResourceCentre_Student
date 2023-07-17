@@ -182,16 +182,30 @@ public class ResourceCentre {
 		camcorderList.add(cc);
 	}
 	
-	public static Chromebook inputChromebook() {	
-		Chromebook cb =null;
-		// write your code here
+	public static Chromebook inputChromebook() {
+		String tag = Helper.readString("Enter asset tag > ");
+		String description = Helper.readString("Enter description > ");
+		String os = Helper.readString("Enter operating system > ");
 
+		Chromebook cb =new Chromebook(tag, description, os);
 		return cb;
 		
 	}	
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
 		// write your code here
+		 Chromebook item;
+		    for(int i = 0; i < chromebookList.size(); i++) {
+		      item = chromebookList.get(i);
+		      if (item.getAssetTag().equalsIgnoreCase(cb.getAssetTag()) )
+		        return;
+		    }
+		    if ((cb.getAssetTag().isEmpty()) || (cb.getDescription().isEmpty()) ) {
+		      return;
+		    }
+		    
+		    chromebookList.add(cb);
 	}
+	
 	
 	//================================= Option 3 Loan an item (CRUD - Update) =================================
 	public static boolean doLoanCamcorder(ArrayList<Camcorder> camcorderList, String tag, String dueDate) {
