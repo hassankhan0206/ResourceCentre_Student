@@ -247,6 +247,8 @@ public class ResourceCentre {
 		}
 	}
 	
+	//Hassan
+	
 	public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
 		// write your code here
 		return true;
