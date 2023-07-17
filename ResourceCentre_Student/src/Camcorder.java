@@ -10,12 +10,15 @@ private int opticalZoom;
 	public int getOpticalZoom() {
 		return opticalZoom;
 	}
+<<<<<<< HEAD
 		//testing for last time
 		//wafiy wifey 3
 
 		//push game strong
 		
 		// hassan
+=======
+>>>>>>> branch 'master' of https://github.com/hassankhan0206/ResourceCentre_Student.git
 
 	
 	public String toString(){
